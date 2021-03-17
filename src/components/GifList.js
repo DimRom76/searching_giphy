@@ -4,7 +4,15 @@ import GifItem from "./GifItem";
 const GifList = function (props) {
   const gifItems = props.gifs.map((image) => {
     return (
-      <GifItem key={image.id} gif={image} onGifSelect={props.onGifSelect} />
+      <GifItem
+        key={image.id}
+        gif={image}
+        onGifSelect={props.onGifSelect}
+        onFavoriteSelect={props.onFavoriteSelect}
+        onFavoriteDeselect={props.onFavoriteDeselect}
+        isAuthenticated={props.isAuthenticated}
+        isFavorite={props.isFavorite}
+      />
     );
   });
 
